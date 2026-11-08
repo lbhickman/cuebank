@@ -37,6 +37,7 @@
     ],
     "macOS": {
       "minimumSystemVersion": "11.0"
-    }
+    },
+    "copyright": "\u00a9 2026 L. Brian Hickman, MD, MSc. All rights reserved."
   }
 }

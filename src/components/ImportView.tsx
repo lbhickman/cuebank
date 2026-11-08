@@ -301,7 +301,7 @@ export default function ImportView({
 
       <div className="two-col">
         <div className="card">
-          <h3 className="section-title">Import questions with AI</h3>
+          <h3 className="section-title">Format your questions with AI</h3>
           <p className="small">
             Choose your import options, save the instruction file, and give it to a trusted AI assistant along with your
             practice questions. It will create a CueBank .md file you can import here.

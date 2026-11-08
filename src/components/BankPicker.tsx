@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import type { Bank, BankMeta } from "../types";
 import * as store from "../storage";
-import { SUPPORT_URL, TAGLINE } from "../config";
-import { IconDoc, IconGear, IconPlus, IconTrash, IconUpload } from "./Icons";
+import { COPYRIGHT_HOLDER, COPYRIGHT_YEAR, SUPPORT_URL, TAGLINE } from "../config";
+import { IconDoc, IconGear, IconPlus, IconSwap, IconTrash, IconUpload } from "./Icons";
 import InstructionsDialog from "./InstructionsDialog";
 
 interface BackupFile {
@@ -151,20 +151,22 @@ export default function BankPicker({
 
         <section className="picker-side">
           <div className="card">
-            <h3><IconDoc size={18} /> Add your questions to a bank</h3>
+            <h3><IconDoc size={18} /> Format your questions with AI</h3>
             <p className="small">
-              Give the AI instructions to ChatGPT, Claude, Gemini, or other assistant along with your practice exam,
-              questions, or PDF. Then import the .md file it creates.
+              Choose your import options, save the instruction file, and give it to a trusted AI assistant (ChatGPT,
+              Claude, Gemini, or other assistant) along with your practice questions. It will create a CueBank .md file.
             </p>
-            <div className="row gap wrap">
-              <button className="btn primary" onClick={onImport}>
-                <IconUpload size={16} /> Import questions
-              </button>
-              <button className="btn" onClick={() => setShowInstructions(true)}>Create AI instructions…</button>
-            </div>
+            <button className="btn" onClick={() => setShowInstructions(true)}>Create AI instructions…</button>
           </div>
           <div className="card">
-            <h3><IconUpload size={18} /> Restore a backup</h3>
+            <h3><IconUpload size={18} /> Add your questions to a bank</h3>
+            <p className="small">Import a CueBank .md file, folder, or .zip into a new or existing bank.</p>
+            <button className="btn primary" onClick={onImport}>
+              <IconUpload size={16} /> Import questions
+            </button>
+          </div>
+          <div className="card">
+            <h3><IconSwap size={18} /> Restore a backup</h3>
             <p className="small">Load a bank (with progress) saved with "Backup", for example from another computer.</p>
             <button className="btn" onClick={() => restoreRef.current?.click()}>Choose backup file…</button>
             <input
@@ -182,10 +184,10 @@ export default function BankPicker({
         </section>
       </main>
       <footer className="picker-foot muted small">
-        CueBank is free, open-source software (MIT License).
+        © {COPYRIGHT_YEAR} {COPYRIGHT_HOLDER}
         {SUPPORT_URL && (
           <>
-            {" "}
+            {" · "}
             <button className="link small" onClick={() => store.openExternal(SUPPORT_URL)}>Support CueBank ☕</button>
           </>
         )}

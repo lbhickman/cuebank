@@ -3,7 +3,6 @@ name = "cuebank"
 version = "1.0.0"
 description = "CueBank question bank"
 authors = ["L. Brian Hickman"]
-license = "MIT"
 edition = "2021"
 
 [lib]

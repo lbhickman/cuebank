@@ -52,9 +52,9 @@ export default function InstructionsDialog({ onClose }: { onClose: () => void })
           <button className="icon-btn" onClick={onClose} aria-label="Close">×</button>
         </div>
         <p className="small muted">
-          By default, the AI keeps your questions, answers, and explanations exactly as written, and adds subject tags
-          and an Educational Objective. Choose any changes you want it to make, then save or copy the instructions and
-          give them to a trusted AI assistant along with your practice questions.
+          By default, your AI is instructed to keep your questions, answers, and explanations exactly as written, and add
+          subject tags and an Educational Objective. Select any changes you want your AI to make, then save or copy the
+          instructions and give them to your trusted AI assistant along with your practice questions.
         </p>
 
         {!preview ? (

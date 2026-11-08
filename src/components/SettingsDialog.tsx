@@ -1,4 +1,6 @@
+import { useState } from "react";
 import type { AppSettings } from "../storage";
+import { COPYRIGHT_HOLDER, COPYRIGHT_YEAR } from "../config";
 
 const THEMES: { key: AppSettings["theme"]; label: string }[] = [
   { key: "light", label: "Light" },
@@ -15,6 +17,30 @@ export default function SettingsDialog({
   onChange: (s: AppSettings) => void;
   onClose: () => void;
 }) {
+  const [notices, setNotices] = useState<string | null>(null);
+  const showNotices = async () => {
+    try {
+      setNotices(await (await fetch("/third-party-notices.txt")).text());
+    } catch {
+      setNotices("Could not load the notices file.");
+    }
+  };
+  if (notices !== null) {
+    return (
+      <div className="modal-backdrop" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
+        <div className="modal wide">
+          <div className="modal-head">
+            <h2>Third-party notices</h2>
+            <button className="icon-btn" onClick={onClose} aria-label="Close">×</button>
+          </div>
+          <pre className="modal-body notices">{notices}</pre>
+          <div className="row end">
+            <button className="btn" onClick={() => setNotices(null)}>Back to Settings</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="modal-backdrop" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
       <div className="modal">
@@ -36,6 +62,11 @@ export default function SettingsDialog({
             </label>
           ))}
         </div>
+        <h3 className="section-title" style={{ marginTop: 22 }}>About</h3>
+        <p className="small muted" style={{ margin: "0 0 6px" }}>
+          CueBank © {COPYRIGHT_YEAR} {COPYRIGHT_HOLDER}. All rights reserved.
+        </p>
+        <button className="link small" style={{ paddingLeft: 0 }} onClick={showNotices}>Third-party notices</button>
         <div className="row end" style={{ marginTop: 20 }}>
           <button className="btn primary" onClick={onClose}>Done</button>
         </div>

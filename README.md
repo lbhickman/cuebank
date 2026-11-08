@@ -2,7 +2,7 @@
 
 **All your practice questions, in one place.**
 
-CueBank is free, open-source software that turns practice questions you already have (a class exam, SAT/ACT/MCAT/AP prep, licensing board review, or questions an AI assistant converted from a PDF) into an exam-style question bank. Import a Markdown file, build randomized blocks by subject and source, answer in Tutor or Test mode, and track your performance.
+CueBank turns practice questions you already have (a class exam, SAT/ACT/MCAT/AP prep, licensing board review, or questions an AI assistant converted from a PDF) into an exam-style question bank. Import a Markdown file, build randomized blocks by subject and source, answer in Tutor or Test mode, and track your performance.
 
 Runs on macOS, Windows, and Linux. Your data stays on your computer.
 
@@ -139,10 +139,14 @@ The built-in lab panel uses common adult reference ranges compiled for CueBank. 
 
 ---
 
+## Third-party software
+
+CueBank is built on open-source components (Tauri, React, KaTeX, and others) that remain under their own licenses. Their notices are in [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt) and in the app under **Settings → Third-party notices**. Regenerate the file whenever dependencies change.
+
 ## Disclaimer
 
 CueBank is an independent project and is not affiliated with any test maker, test prep company, or exam administrator. Users are responsible for having the right to use any questions they import.
 
 ## License
 
-[MIT](LICENSE) © 2026 L. Brian Hickman, MD, MSc
+Proprietary. © 2026 L. Brian Hickman, MD, MSc. All rights reserved. See [LICENSE](LICENSE).

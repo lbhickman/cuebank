@@ -2,8 +2,8 @@
   "name": "cuebank",
   "private": true,
   "version": "1.0.0",
-  "description": "CueBank: free, open-source exam-style practice for your own multiple-choice questions.",
-  "license": "MIT",
+  "description": "CueBank: exam-style practice for your own multiple-choice questions.",
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
     "dev": "vite",
