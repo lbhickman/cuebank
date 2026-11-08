@@ -180,8 +180,13 @@ export default function ImportView({
       {!preview && (
         <div
           className={"dropzone" + (over ? " over" : "")}
+          onDragEnter={(e) => {
+            e.preventDefault();
+            setOver(true);
+          }}
           onDragOver={(e) => {
             e.preventDefault();
+            e.dataTransfer.dropEffect = "copy";
             setOver(true);
           }}
           onDragLeave={() => setOver(false)}
