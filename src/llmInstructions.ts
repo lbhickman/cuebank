@@ -4,6 +4,7 @@
 export type ImportOptionKey =
   | "grammar"
   | "terminology"
+  | "explainCorrect"
   | "explainWrong"
   | "flag"
   | "update"
@@ -14,6 +15,7 @@ export type ImportOptionKey =
 export const IMPORT_OPTIONS: { key: ImportOptionKey; label: string; description: string }[] = [
   { key: "grammar", label: "Fix grammar and typos", description: "Corrects spelling, grammar, and formatting errors without changing meaning." },
   { key: "terminology", label: "Update outdated terminology", description: "Replaces outdated terms with current ones, keeping the original in parentheses." },
+  { key: "explainCorrect", label: "Explain the correct answer", description: "Adds a fuller explanation of why the correct answer is right, when the source's explanation is brief or missing." },
   { key: "explainWrong", label: "Explain incorrect answer choices", description: "Adds a brief reason why each wrong choice is wrong, when the source doesn't give one." },
   { key: "flag", label: "Flag possible errors", description: "Adds an Accuracy Note after the explanation if the answer or explanation may be wrong." },
   { key: "update", label: "Update to current information", description: "Revises any part of the question that is outdated or incorrect. This may result in extensive changes." },
@@ -110,6 +112,8 @@ const OPTION_RULES: Record<ImportOptionKey, string> = {
   grammar: `**Fix grammar and typos.** Correct spelling, grammar, and punctuation mistakes, and repair formatting problems such as broken line breaks, scanning (OCR) errors, and inconsistent numbering. Do not change the meaning, facts, difficulty, or the author's wording beyond fixing errors.`,
 
   terminology: `**Update outdated terminology.** When a term has been formally replaced by a newer accepted term in its field, use the current term followed by the original term in parentheses, for example "Myanmar (Burma)". Do this the first time the term appears in each question; afterward use the current term alone. Do not modernize ordinary wording or style.`,
+
+  explainCorrect: `**Explain the correct answer.** If a question's explanation is missing, or is too brief to teach why the correct answer is right (for example, only restating the answer), add a clear explanation of why the correct answer is right: the key fact, reasoning, or calculation a student needs. Keep the source's original explanation as written and put your addition after it. If the source's explanation is already complete, leave it unchanged.`,
 
   explainWrong: `**Explain incorrect answer choices.** If the explanation does not say why a particular incorrect choice is wrong, add a short reason (one or two sentences) for that choice. Put these at the end of the explanation in a list headed "**Why the other choices are incorrect:**", one bullet per choice, starting with its letter. Do not repeat reasons the source already gives.`,
 
