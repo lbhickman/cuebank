@@ -1,6 +1,6 @@
 # CueBank
 
-**Your questions. Your Q-bank.**
+**All your practice questions, in one place.**
 
 CueBank is free, open-source software that turns practice questions you already have (a class exam, SAT/ACT/MCAT/AP prep, licensing board review, or questions an AI assistant converted from a PDF) into an exam-style question bank. Import a Markdown file, build randomized blocks by subject and source, answer in Tutor or Test mode, and track your performance.
 
