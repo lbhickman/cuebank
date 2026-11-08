@@ -11,6 +11,11 @@ export type ImportTarget = { kind: "existing"; id: string } | { kind: "new"; nam
 
 const NEW = "__new__";
 
+function importLabel(n: number, edits: number) {
+  const q = `Import ${n} question${n === 1 ? "" : "s"}`;
+  return edits ? `${q}, ${edits} edit${edits === 1 ? "" : "s"}` : q;
+}
+
 export default function ImportView({
   index,
   currentBankId,
@@ -298,7 +303,7 @@ export default function ImportView({
               disabled={busy || (!preview.newQuestions.length && !(applyUpdates && preview.updatedQuestions.length))}
               onClick={confirmImport}
             >
-              Import {preview.newQuestions.length} question{preview.newQuestions.length === 1 ? "" : "s"}
+              {importLabel(preview.newQuestions.length, applyUpdates ? preview.updatedQuestions.length : 0)}
             </button>
           </div>
         </div>
