@@ -149,4 +149,4 @@ CueBank is an independent project and is not affiliated with any test maker, tes
 
 ## License
 
-Proprietary. © 2026 L. Brian Hickman, MD, MSc. All rights reserved. See [LICENSE](LICENSE).
+Proprietary. © 2026 L. Brian Hickman, MD. All rights reserved. See [LICENSE](LICENSE).

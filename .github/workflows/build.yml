@@ -59,7 +59,7 @@ jobs:
           tagName: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
           releaseName: "CueBank ${{ github.ref_name }}"
           releaseBody: "Download the .dmg for Mac, .msi/.exe for Windows, or .AppImage/.deb for Linux."
-          releaseDraft: true
+          releaseDraft: false
           args: ${{ matrix.args }}
 
       - name: Upload build artifacts

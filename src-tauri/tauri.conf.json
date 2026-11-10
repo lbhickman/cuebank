@@ -37,8 +37,9 @@
       "icons/icon.ico"
     ],
     "macOS": {
-      "minimumSystemVersion": "11.0"
+      "minimumSystemVersion": "11.0",
+      "signingIdentity": "-"
     },
-    "copyright": "\u00a9 2026 L. Brian Hickman, MD, MSc. All rights reserved."
+    "copyright": "\u00a9 2026 L. Brian Hickman, MD. All rights reserved."
   }
 }
